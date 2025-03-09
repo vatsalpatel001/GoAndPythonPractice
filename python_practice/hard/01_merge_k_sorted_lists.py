@@ -78,8 +78,18 @@ def merge_k_lists(lists):
     Returns:
         ListNode - The head of the merged sorted linked list
     """
-    # TODO: Implement your solution here
-    pass
+    # print(lists)
+    final_list = []
+    for x in lists:
+        s = str(x)
+        i = s.split("->")
+        for j in i:
+            if j != "None":
+                final_list.append(int(j))
+    final_list.sort()
+    if len(final_list) == 0:
+        return []
+    return create_linked_list(final_list)
 
 
 # Test cases
