@@ -33,12 +33,20 @@ package main
 import (
 	"fmt"
 	"strings"
-	"unicode"
+
 )
 
 func isPalindrome(s string) bool {
-	// TODO: Implement your solution here
-	return false
+	s = strings.ReplaceAll(s, " ", "")
+	s = strings.ReplaceAll(s, ":", "")
+	s = strings.ReplaceAll(s, ",", "")
+	s = strings.ToLower(s)
+	for i:=0;i<len(s);i++{
+		if s[i] != s[len(s)-i-1]{
+			return false
+		}
+	}
+	return true
 }
 
 func runTests() {
