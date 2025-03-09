@@ -31,9 +31,10 @@ def two_sum(nums, target):
     Returns:
         List[int] - Indices of the two numbers that add up to target
     """
-    # TODO: Implement your solution here
-    pass
-
+    for i, x in enumerate(nums):
+        for j, y in enumerate(nums):
+            if x+y == target and i != j:
+                return [i,j]
 
 # Test cases
 def test_two_sum():
